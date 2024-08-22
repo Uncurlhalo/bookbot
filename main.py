@@ -6,11 +6,17 @@ def main():
     book_text = get_book_text(book_path)
     # Get the count of words in the text, and a list of those words
     word_count, book_words = count_words(book_text)
-    # Count the number of each character in the list of words
+    # Count the number of each character in the list of words, returns a dict of chars and their counts
     book_chars_count = count_chars(book_words)
+    # Turn the dict of chars into a list of dicts and sort it
+    list_book_chars = [{"char": char, "count": count} for char, count in book_chars_count.items()]
+    list_book_chars.sort(reverse=True, key=sort_on)
+    # Pass the sorted list of characters dicts to our report print function
+    print(list_book_chars)
 
-
-    print(book_chars_count)
+# Define sorting parameter our dict
+def sort_on(dict):
+    return dict["count"]
 
 # Read the contents of the file passed in by the argument `path`
 # Return a string containing contents of the text file
