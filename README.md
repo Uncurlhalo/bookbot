@@ -14,7 +14,7 @@ Bookbot analyzes a provided text file and provides a report listing the followin
 
 ## Dependencies
 
-* python version 3.0
+* python version >= 3.0
 
 ## Planned feature additions
 
