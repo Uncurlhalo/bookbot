@@ -7,12 +7,12 @@ def main():
     # Get the count of words in the text, and a list of those words
     word_count, book_words = count_words(book_text)
     # Count the number of each character in the list of words, returns a dict of chars and their counts
-    book_chars_count = count_chars(book_words)
+    book_chars_count, char_count_total = count_chars(book_words)
     # Turn the dict of chars into a list of dicts and sort it
     list_book_chars = [{"char": char, "count": count} for char, count in book_chars_count.items()]
     list_book_chars.sort(reverse=True, key=sort_on)
     # Pass the sorted list of characters dicts to our report print function
-    print_report(list_book_chars, word_count, book_path)
+    print_report(list_book_chars, word_count, char_count_total, book_path)
 
 # Define sorting parameter for our dict
 def sort_on(dict):
@@ -40,21 +40,24 @@ def count_words(text):
 # Return a dict of all chars encountered and their counts
 def count_chars(words):
     char_dict = {}
+    total_chars = 0
     for word in words:
         # loop over all chars in the word after lowering their case
         for char in word.lower():
+            total_chars += 1
             # if the char is not already in the dict, initialize its count as 1
             if char in char_dict:
                 char_dict[char] += 1
             else:
                 char_dict[char] = 1
 
-    return char_dict
+    return char_dict, total_chars
 
 # Print out a report of all the information we've collected
-def print_report(char_list_dict, word_count, book_path):
+def print_report(char_list_dict, word_count, char_count, book_path):
     print(f"--- Begin report of {book_path} ---")
     print(f"{word_count} words found in the document")
+    print(f"{char_count} characters found in the document")
     for item in char_list_dict:
         if item["char"].isalpha():
             print(f"The '{item["char"]}' character was found {item["count"]} times")
