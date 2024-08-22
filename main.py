@@ -14,7 +14,7 @@ def main():
     # Pass the sorted list of characters dicts to our report print function
     print_report(list_book_chars, word_count, book_path)
 
-# Define sorting parameter our dict
+# Define sorting parameter for our dict
 def sort_on(dict):
     return dict["count"]
 
@@ -62,5 +62,6 @@ def print_report(char_list_dict, word_count, book_path):
             continue
     print("--- End report ---")
     return
+
 
 main()
