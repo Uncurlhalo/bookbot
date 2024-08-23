@@ -21,8 +21,5 @@ An example config file, provided as `config.txt`, as well as the text of two pub
 * python version 3.10 or greater
 * imports os, tkinter, and argparse. Installation of tkinter may be necessary on some systems.
 
-
-
-
 ## Acknowledgement
 This project is based on the guided project course "Build a Bookbot" from [Boot.dev](https://www.boot.dev/tracks/backend)
