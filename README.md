@@ -23,3 +23,4 @@ An example config file, provided as `config.txt`, as well as the text of two pub
 
 ## Acknowledgement
 This project is based on the guided project course "Build a Bookbot" from [Boot.dev](https://www.boot.dev/tracks/backend)
+Some of my feature additions were inspired by another boot.dev learner. Their repo can be found at this URL https://github.com/lucjalbert/bookbot. Thanks for the inspiration!
