@@ -1,5 +1,6 @@
 #!/usr/bin/env python3
 import os
+import sys
 import argparse
 import tkinter as tk
 from tkinter import filedialog
@@ -127,8 +128,8 @@ def process_config(config):
                 print("Exiting")
     except (FileNotFoundError, PermissionError) as e:
         print("File not found, path incorrect, or permission error on file")
-        print(e)
-    
+        quit(e)
+        
     # Tell the user we read their config, and list the paths to the files we'll analyze
     print("Config read successfully, found following list of texts:")
     print(text_list_paths)

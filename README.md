@@ -7,21 +7,22 @@ Bookbot analyzes a provided text file and provides a report listing the followin
 
 ## Installation and Use
 
-* Clone the repository, or download the `main.py` file directly.
-* edit the value of the variable `book_path` to contain a string with an absolute or relative path to a text file (Unicode characters are unsupported so please sanitize the input)
+* Clone the repository
+* (Optional) Download or create text files to be analyzed, add their paths to the `config.txt` file
 * Python must be installed on the system (this is out of scope of these instructions)
-* Execute the command `python3 main.py`
+* Execute the command `./main.py` without arguments for interactive mode. 
+* Read the help message for details on other CLI arguments.
+
+### Configuration
+An example config file, provided as `config.txt`, as well as the text of two public domain books have been provided in the `books` directory. The configuration file expects relative or absolute paths to plaintext files separated by spaces or new lines.
 
 ## Dependencies
 
-* python version >= 3.0
+* python version 3.10 or greater
+* imports os, tkinter, and argparse. Installation of tkinter may be necessary on some systems.
 
-## Planned feature additions
 
-* Support for files to be provided by a configuration file
-* Support for interactive mode allowing the user to input a file path
-* support for Unicode within text files
-* Proper error handling for cases such as non-existent files, empty files, or unsupported file extensions
+
 
 ## Acknowledgement
 This project is based on the guided project course "Build a Bookbot" from [Boot.dev](https://www.boot.dev/tracks/backend)
